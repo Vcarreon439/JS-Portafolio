@@ -1,0 +1,235 @@
+#page-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.base-button {
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+}
+
+.primary-button {
+    color: white;
+    border: none;
+    background-color: var(--accent-color);
+}
+
+.danger-button {
+    color: white;
+    border: none;
+    background-color: var(--danger-color);
+}
+
+.secondary-button {
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color)
+}
+
+.primary-button:hover {
+    background-color: var(--accent-color-hovered);
+}
+
+.input-text {
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    color: var(--gray-700);
+    border: 1px solid var(--gray-200);
+}
+
+.input-text-error {
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    color: var(--gray-700);
+    border: 1px solid var(--danger-color);
+}
+
+.input-text::placeholder {
+    color: var(--gray-300);
+}
+
+.add-element {
+    width: 40px;
+    height: 40px;
+    padding: 1rem;
+    display: flex;
+    cursor: pointer;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 3px solid var(--gray-900);
+}
+
+.question-element {
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--gray-200);
+}
+
+.question-indicator {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    color: white;
+    font-weight: 600;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--gray-400);
+}
+
+.icon-button {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    border: 1px solid var(--gray-400);
+    border-radius: 5px;
+    background-color: white;
+}
+
+.img-button {
+    width: 15px;
+    height: 15px;
+    object-fit: contain;
+}
+
+.divider {
+    border-style: dashed;
+    border-top: 1px solid var(--gray-300);
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.index-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px 10px;
+    grid-template-areas:
+        "Progreso-encuesta Progreso-encuesta Calendar"
+        "Alumnos-registrados Alumnos-activos Calendar";
+}
+
+.flex-center {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.medium-img {
+    width: 150px;
+    height: 150px;
+}
+
+.modal {
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 80%);
+}
+
+
+#spinner {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background:
+            radial-gradient(farthest-side,#7075F4 94%,#0000) top/16px 16px no-repeat,
+            conic-gradient(#0000 30%,#7075F4);
+    -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 16px),#000 0);
+    animation: spinner-animation 1s infinite linear;
+}
+@keyframes spinner-animation {
+    100%{transform: rotate(1turn)}
+}
+
+#grid-data {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+}
+
+#selection {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#survey-selector {
+    border: 1px solid #D1D5DB;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    outline: none;
+}
+
+#grid-data > div {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+}
+
+#per-user { grid-area: 1 / 1 / 2 / 3; }
+#track-by-day { grid-area: 2 / 1 / 3 / 3; }
+#calendar { grid-area: 1 / 3 / 3 / 4; }
+
+.disabled {
+    cursor: not-allowed;
+}
+
+.hover\:selected:hover {
+    border: 2px solid var(--blue-400);
+}
+
+.hover\:bg-gray-200:hover {
+    background-color: var(--gray-200);
+}
+
+.range-form .dualrange__range {
+    background-color: var(--blue-400);
+}
+
+.range-form .dualrange__min, .range-form .dualrange__max {
+    border-color: var(--blue-400);
+}
+
+.range-form .dualrange__min::before, .range-form .dualrange__max::before {
+    background-color: var(--blue-500);
+}
+
+.range-form .dualrange__min::after, .range-form .dualrange__max::after {
+    border-color: var(--blue-400);
+}
+
+@media screen and (max-width: 1024px) {
+    #grid-data {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    #per-user { grid-area: unset; }
+    #track-by-day { grid-area: unset; }
+    #calendar { grid-area: unset; }
+}
